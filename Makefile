@@ -23,6 +23,8 @@ RESDIR=res
 DATADIR=dat
 DESTDIR=.
 
+EIGENDIR=/users/hannahtillim/include/
+
 # Add sourcedir to vpath
 VPATH=$(SOURCEDIR)
 
@@ -34,7 +36,7 @@ MACROS = -DRESDIR=\"$(RESDIR)\" -DDATADIR=\"$(DATADIR)\"
 
 GCC = g++
 
-CFLAGS = -Wall -w -O3 -Wno-unknown-pragmas -I $(INCLUDEDIR) $(MACROS) -I /users/hannahtillim/include/ -std=c++11
+CFLAGS = -Wall -w -O3 -Wno-unknown-pragmas -I $(INCLUDEDIR) $(MACROS) -I $(EIGENDIR) -std=c++11
 LIBS = /usr/local/shared/gsl/1.16-gcc/lib/*.a
 
 INCPATH = $(CFLAGS)
