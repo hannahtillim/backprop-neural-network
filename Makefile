@@ -36,8 +36,7 @@ MACROS = -DRESDIR=\"$(RESDIR)\" -DDATADIR=\"$(DATADIR)\"
 
 GCC = g++
 
-CFLAGS = -Wall -w -O3 -Wno-unknown-pragmas -I $(INCLUDEDIR) $(MACROS) -I $(EIGENDIR) -std=c++11
-LIBS = /usr/local/shared/gsl/1.16-gcc/lib/*.a
+CFLAGS = -Wall -w -O3 -Wno-unknown-pragmas -I $(INCLUDEDIR) $(MACROS) -I $(EIGENDIR) -std=c++11 
 
 INCPATH = $(CFLAGS)
 
