@@ -5,7 +5,7 @@ This project uses Feed-Forward Neural Networks for classification. The analysis 
 There is functionality for input decorrelation and normalisation, adaptive learning rates and use of multiple strategies in one run.
 
 ## FILES:
-MVA_main.cc  
+analyse.cc  
 MVA_Analysis.cc  
 MVA_Analysis.h  
 Perceptron.cc  
