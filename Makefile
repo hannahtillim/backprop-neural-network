@@ -43,7 +43,7 @@ INCPATH = $(CFLAGS)
 
 # main programs and required modules 
 
-MAIN =  main
+MAIN =  analyse
 
 MODULES = MVA_Analysis Perceptron
 

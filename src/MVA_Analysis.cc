@@ -309,7 +309,7 @@ void MVA_Analysis::load_events(){
             if (thisevent.size() < numvars){
                 validEv = false;
                 smallevs++;
-                std::cout << "WARNING: event " lines << " (" << label << ") has too few variables: " << thisevent.size() << std::endl;
+                std::cout << "WARNING: event " << lines << " (" << label << ") has too few variables: " << thisevent.size() << std::endl;
             }
             
             if (!validEv) continue;
