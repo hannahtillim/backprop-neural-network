@@ -1,0 +1,16 @@
+; #--------------------#
+; # PARAM CARD FOR MVA #
+; #--------------------#
+decorrelate  1
+strategy     1
+avg_step     30
+max_ratio    1.04
+sigwt        0.2
+bkgwt        0.8
+val_Trigg    0.5
+BP_gens     300
+GA_gens     0
+alpha        0.01
+BP_sweepsize 100
+
+
