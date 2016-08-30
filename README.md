@@ -71,7 +71,7 @@ This file can be used to load those weights at the beginning of a new run, rathe
 In the folder 'Plots' there are some python scripts to plot the data. 
 
 1. SB_plot.py  
-  * Usage: `python ./SB_plot.py Results.dat`  
+  * Usage: `python ./SB_plot.py Results.dat` after having edited the python file for the correct luminosity.
   * Output: Plots of the number of signal and background events, S/sqrt(B), S/B and number of events histograms as a function of ANN decision boundary. The graph `Results_hist.png` is a good indicator - good training will result in the `0` events being pushed to the left and the `1` events to the right; the more separation the better.  
 2. plot_errors.py  
   * Usage: `python ./plot_errors.py`  
