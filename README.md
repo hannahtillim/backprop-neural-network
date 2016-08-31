@@ -68,7 +68,7 @@ This file can be used to load those weights at the beginning of a new run, rathe
 * TODO: The information will also be useful when, having decided on a final, good set of weights, one wishes to test them against another set of data without any further training.
 
 ## GRAPHING RESULTS
-In the folder 'Plots' there are some python scripts to plot the data. 
+In the folder 'plot' there are some python scripts to plot the data. 
 
 1. SB_plot.py  
   * Usage: `python ./SB_plot.py Results.dat` after having edited the python file for the correct luminosity.
