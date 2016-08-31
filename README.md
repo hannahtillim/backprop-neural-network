@@ -5,7 +5,7 @@ This project uses Feed-Forward Neural Networks for classification. The analysis 
 There is functionality for input decorrelation and normalisation, adaptive learning rates and use of multiple strategies in one run.
 
 ## FILES:
-MVA_main.cc  
+analyse.cc  
 MVA_Analysis.cc  
 MVA_Analysis.h  
 Perceptron.cc  
@@ -48,13 +48,15 @@ There are a variety of parameters which can affect the training. See the include
 ## STRATEGIES
 The NN can be trained using a Genetic Algorithm, a Backprop Algorithm, or a mixture of both:  
 
-0. **GA**: Improves by trial-and-error of random perturbations to the weights followed by an evaluation of the error.  
+**Option `0`: GA**: Improves by trial-and-error of random perturbations to the weights followed by an evaluation of the error.  
   * Advantages: easier to escape a local minimum.  
-  * Disadvantages: Very slow, bad at digging into a nearby minimum.  
-1. **BP**: Calculates optimum modification of the weights based on a gradient descent algorithm. `BP_sweepsize` decided how many operations are carried out before the error is evaluated and a decision made.  
+  * Disadvantages: Very slow, bad at digging into a nearby minimum. 
+
+**Option `1`: BP**: Calculates optimum modification of the weights based on a gradient descent algorithm. `BP_sweepsize` decided how many operations are carried out before the error is evaluated and a decision made.  
   * Advantages: Very fast - in fact, NNs frequently overtrain within the first few generations, depending on the variations in the data. If you find this to be happening, try to reduce the `BP_sweepsize` to gain better granularity.
   * Disadvantages: Can get stuck in a local minimum even if there is a better minimum just over a rise (so to speak).
-2. **Mix** (experimental) : Swaps between GA and BP in the hope that, when the BP has finished working its way into a local minimum, a few rounds of GA could help spot if there is a better configuration nearby by casting random probes. At the moment, one must specify how many generations of each are required before swapping (`BP_gens` and `GA_gens`). In this case, the 'number of generations' specified in the command line argument become the number of repetitions of one round of each (so don't set it too high).  
+
+**Option `2`: Mix** (experimental) : Swaps between GA and BP in the hope that, when the BP has finished working its way into a local minimum, a few rounds of GA could help spot if there is a better configuration nearby by casting random probes. At the moment, one must specify how many generations of each are required before swapping (`BP_gens` and `GA_gens`). In this case, the 'number of generations' specified in the command line argument become the number of repetitions of one round of each (so don't set it too high).  
   * Plans to add the ability of the program to judge when the time is right to make the switch.
   * Have seen improvement in some data samples using this method, less in others. Needs optimisation.
 
@@ -64,3 +66,13 @@ When the run is complete, the program will produce an `NN_Record.dat` file, whic
 This file can be used to load those weights at the beginning of a new run, rather than using the randomly-generated fresh weights. This can be useful for further optimisation of the weights.  
 
 * TODO: The information will also be useful when, having decided on a final, good set of weights, one wishes to test them against another set of data without any further training.
+
+## GRAPHING RESULTS
+In the folder 'Plots' there are some python scripts to plot the data. 
+
+1. SB_plot.py  
+  * Usage: `python ./SB_plot.py Results.dat` after having edited the python file for the correct luminosity.
+  * Output: Plots of the number of signal and background events, S/sqrt(B), S/B and number of events histograms as a function of ANN decision boundary. The graph `Results_hist.png` is a good indicator - good training will result in the `0` events being pushed to the left and the `1` events to the right; the more separation the better.  
+2. plot_errors.py  
+  * Usage: `python ./plot_errors.py`  
+  * Output: Errors for both training and validation samples as generations increase.
