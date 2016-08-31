@@ -76,3 +76,6 @@ In the folder 'plot' there are some python scripts to plot the data.
 2. plot_errors.py  
   * Usage: `python ./plot_errors.py`  
   * Output: Errors for both training and validation samples as generations increase.
+
+## MAKING CUTS
+To cut at a certain value of the discriminant, just write a script to take only those lines in `Results.dat` which have a judgement value (last column) above that value.
